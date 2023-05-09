@@ -122,34 +122,34 @@
 // reason: plotTwist() is inside the scope of changeMurderer
 
 // Episode 7
-let murderer = 'Professor Plum';
+// let murderer = 'Professor Plum';
 
-const changeMurderer = function() {
-  murderer = 'Mr. Green';
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
 
-  const plotTwist = function() {
-    let murderer = 'Colonel Mustard';
+//   const plotTwist = function() {
+//     let murderer = 'Colonel Mustard';
 
-    const unexpectedOutcome = function() {
-      murderer = 'Miss Scarlet';
-    }
+//     const unexpectedOutcome = function() {
+//       murderer = 'Miss Scarlet';
+//     }
 
-    unexpectedOutcome();
-  }
+//     unexpectedOutcome();
+//   }
 
-  plotTwist();
-}
+//   plotTwist();
+// }
 
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
 
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
 
-// output: 
-// reason: 
+// output: "The murderer is Mr. Green"
+// reason: The plotTwist function uses let so only has local scope
 
 // Episode 8
 // const scenario = {
@@ -187,25 +187,23 @@ console.log(verdict);
 // const verdict = declareWeapon();
 // console.log(verdict);
 
-// output: 
-// reason: 
+// output: "The weapon is Candle Stick"
+// reason: plotTwist is inside changeScenario which defines the room as the dining room, allowing it to change the murderer to match the unexpected outcome.
 
 // Episode 9
-// let murderer = 'Professor Plum';
+let murderer = 'Professor Plum';
 
-// if (murderer === 'Professor Plum') {
-//   let murderer = 'Mrs. Peacock';
-// }
+if (murderer === 'Professor Plum') {
+  let murderer = 'Mrs. Peacock';
+}
 
-// const declareMurderer = function() {
-//   return `The murderer is ${murderer}.`;
-// }
+const declareMurderer = function() {
+  return `The murderer is ${murderer}.`;
+}
 
-// const verdict = declareMurderer();
-// console.log(verdict);
+const verdict = declareMurderer();
+console.log(verdict);
 
-// output: 
-// reason: 
+// output: "The murderer is Professor Plum"
+// reason: The if statement contains a let which only has local scope to it, and so cannot be returned further down.
 
-// Extensions
-// Make up your own episode!
