@@ -191,18 +191,18 @@
 // reason: plotTwist is inside changeScenario which defines the room as the dining room, allowing it to change the murderer to match the unexpected outcome.
 
 // Episode 9
-let murderer = 'Professor Plum';
+// let murderer = 'Professor Plum';
 
-if (murderer === 'Professor Plum') {
-  let murderer = 'Mrs. Peacock';
-}
+// if (murderer === 'Professor Plum') {
+//   let murderer = 'Mrs. Peacock';
+// }
 
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
 
-const verdict = declareMurderer();
-console.log(verdict);
+// const verdict = declareMurderer();
+// console.log(verdict);
 
 // output: "The murderer is Professor Plum"
 // reason: The if statement contains a let which only has local scope to it, and so cannot be returned further down.
